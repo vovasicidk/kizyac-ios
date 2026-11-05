@@ -1,0 +1,54 @@
+/* Plain surfaces and direct destinations. */
+.theme-layer{display:none}
+.brand small,.brand strong>span,.page-heading>.eyebrow,.page-heading>p,.lab-heading>.eyebrow{display:none}
+.brand-icon{display:none}
+header .brand{margin-right:auto;min-width:0}
+header .brand strong,body[data-page="reactor"] header .brand strong{font-size:17px;letter-spacing:0}
+.directory-open{flex-shrink:0;padding:10px 12px;min-height:40px;background:var(--panel);border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:600}
+header{gap:6px}
+.page-heading{padding-top:18px;margin-bottom:12px}
+.page-heading h2{font-size:24px;letter-spacing:-.4px}
+.card,.info,.stat,.award,.specimen-card,.coach,.backup-nudge,.lab-metrics>div{border-radius:8px;box-shadow:none;background:var(--panel)}
+.card{border-color:var(--line)}
+.big-symbol{display:none}
+.primary,.secondary,.buy{border-radius:7px;box-shadow:none}
+.nav{backdrop-filter:none;border-radius:0}
+.nav button{border-radius:6px}
+.nav button span{font-size:10px;letter-spacing:0}
+#page-cascade>.tabs,#page-decay>.tabs,#page-cosmos>.tabs,#page-journal>.tabs{display:flex;flex-wrap:wrap;overflow:visible;gap:4px;background:none;border:0;padding:0 0 12px}
+.page>.tabs button{flex:0 1 auto!important;min-height:38px;padding:8px 10px!important;font-size:11px!important;border-radius:6px;background:none;color:var(--muted);border:1px solid transparent;white-space:normal}
+.page>.tabs button.selected{background:var(--panel);color:var(--text);border-color:var(--line);font-weight:700}
+.page>.tabs>.motion-indicator{display:none}
+.directory-search{display:block;font-size:12px;color:var(--muted);margin:14px 0 22px}
+.directory-search input{display:block;width:100%;margin-top:7px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:12px;font-size:16px;min-height:44px}
+.directory-group{margin:0 0 22px}
+.directory-group h3{font-size:12px;color:var(--muted);font-weight:400;margin:0 0 5px}
+.directory-item{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;gap:10px;padding:12px 0;background:transparent;border-bottom:1px solid var(--line);border-radius:0;min-height:58px}
+.directory-item>span:first-child{min-width:0}
+.directory-item b{font-size:14px;font-weight:500;color:var(--text);display:block}
+.directory-item small{font-size:11px;line-height:1.45;color:var(--muted);display:block;margin-top:3px}
+.directory-item[aria-current]{border-bottom-color:var(--accent)}
+.directory-item[aria-current] b{color:var(--accent)}
+.directory-item:disabled{opacity:.65}
+.directory-status{font-size:10px;color:var(--muted);flex-shrink:0}
+.directory-open:focus-visible,.directory-item:focus-visible,.directory-search input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:360px){.directory-open{padding:9px 8px;font-size:11px}header>.icon-btn{width:34px;flex-shrink:0}body[data-page="reactor"] header>.icon-btn{width:32px}.nav button span{font-size:9px}}
+body:not([data-page="reactor"]) header{position:sticky;top:0;z-index:45;background:var(--bg)}
+.directory-group:has(.directory-item){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+.directory-group h3{grid-column:1/-1}
+.directory-item{min-height:72px;align-items:flex-start}
+.directory-status{font-size:9px}
+.directory-item small{font-size:10px}
+@media(max-width:340px){.directory-group:has(.directory-item){column-gap:10px}.directory-item b{font-size:12px}.directory-status{display:none}}
+.page-heading{padding:16px 0 0;margin:0 0 12px}
+.page>.tabs{margin:0 0 12px}
+#directory-list>.directory-group:first-child{grid-template-columns:1fr}
+#radio-strip{margin:8px 0;padding:6px 10px;border-radius:6px}
+.resource-strip>div{border-radius:6px;box-shadow:none}
+
+#finale-plan { outline: none; }
+.finale-overview, .finale-stage { padding: 16px; }
+.finale-overview h3, .finale-stage h3 { margin-bottom: 8px; }
+.finale-overview p, .ending p { line-height: 1.55; }
+.finale-stage .requirement span, .ending .stat b { overflow-wrap: anywhere; }
+.ending .stat-grid { margin: 16px 0; }
