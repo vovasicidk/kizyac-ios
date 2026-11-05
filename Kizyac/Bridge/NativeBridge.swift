@@ -16,7 +16,6 @@ final class NativeBridge: NSObject, WKScriptMessageHandler {
         if let data = try? JSONSerialization.data(withJSONObject: [savedState]),
            let str = String(data: data, encoding: .utf8),
            str.count >= 2 {
-            // str is ["..."], take the inside string
             encodedSavedState = String(str.dropFirst().dropLast())
         } else {
             encodedSavedState = "\"\""
@@ -27,7 +26,18 @@ final class NativeBridge: NSObject, WKScriptMessageHandler {
             window.__INITIAL_SAVE__ = \(encodedSavedState);
             
             var style = document.createElement('style');
-            style.textContent = '* { -webkit-touch-callout: none !important; } input, textarea { -webkit-user-select: auto !important; }';
+            style.textContent = `
+                * { -webkit-touch-callout: none !important; }
+                input, textarea { -webkit-user-select: auto !important; }
+                body {
+                    padding-top: env(safe-area-inset-top) !important;
+                    box-sizing: border-box !important;
+                }
+                body[data-page="reactor"] {
+                    height: 100vh !important;
+                    height: 100dvh !important;
+                }
+            `;
             if (document.head) {
                 document.head.appendChild(style);
             } else {

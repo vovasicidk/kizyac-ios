@@ -41,14 +41,15 @@ final class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate
         config.mediaTypesRequiringUserActionForPlayback = []
         config.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         
-        webView = WKWebView(frame: .zero, configuration: config)
-        webView.translatesAutoresizingMaskIntoConstraints = false
+        // Full screen edge-to-edge
+        webView = WKWebView(frame: view.bounds, configuration: config)
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor(red: 11/255, green: 16/255, blue: 14/255, alpha: 1.0)
         
-        // Enable scrolling so upgrades, achievements, and long lists can be swiped vertically
+        // Enable scrolling so upgrades and long lists swipe vertically
         webView.scrollView.isScrollEnabled = true
         webView.scrollView.bounces = true
         webView.scrollView.alwaysBounceVertical = false
@@ -60,15 +61,6 @@ final class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate
         MusicManager.shared.setWebView(webView)
         
         view.addSubview(webView)
-        
-        // Pin to top safeAreaLayoutGuide so header starts cleanly below the notch/Dynamic Island
-        // Pin to bottom of view so bottom nav bar extends seamlessly to the screen edge
-        NSLayoutConstraint.activate([
-            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            webView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
     }
     
     private func loadWebContent() {

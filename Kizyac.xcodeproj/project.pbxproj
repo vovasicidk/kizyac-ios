@@ -17,6 +17,7 @@
 		10000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20000008 /* Assets.xcassets */; };
 		10000009 /* Web in Resources */ = {isa = PBXBuildFile; fileRef = 20000009 /* Web */; };
 		10000010 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 20000010 /* Sounds */; };
+		10000011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20000012 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		20000009 /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Web; sourceTree = "<group>"; };
 		20000010 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		20000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20000012 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				20000009 /* Web */,
 				20000010 /* Sounds */,
 				20000008 /* Assets.xcassets */,
+				20000012 /* LaunchScreen.storyboard */,
 				20000011 /* Info.plist */,
 			);
 			path = Kizyac;
@@ -148,6 +151,7 @@
 				10000008 /* Assets.xcassets in Resources */,
 				10000009 /* Web in Resources */,
 				10000010 /* Sounds in Resources */,
+				10000011 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +249,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Kizyac/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Кизяк";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -269,6 +274,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Kizyac/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Кизяк";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,4 +314,3 @@
 	};
 	rootObject = 90000001 /* Project object */;
 }
-
