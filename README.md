@@ -34,3 +34,4 @@
 1. Откройте `Kizyac.xcodeproj` в Xcode.
 2. В разделе **Signing & Capabilities** выберите вашу команду (*Personal Team*).
 3. Выберите ваше устройство и нажмите **Run (▶)**.
+

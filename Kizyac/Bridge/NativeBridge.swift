@@ -26,6 +26,16 @@ final class NativeBridge: NSObject, WKScriptMessageHandler {
         (function() {
             window.__INITIAL_SAVE__ = \(encodedSavedState);
             
+            var style = document.createElement('style');
+            style.textContent = '* { -webkit-touch-callout: none !important; } input, textarea { -webkit-user-select: auto !important; }';
+            if (document.head) {
+                document.head.appendChild(style);
+            } else {
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.head.appendChild(style);
+                });
+            }
+            
             window.Native = {
                 isProtectedStorage: function() { return true; },
                 hasAmplitudeControl: function() { return true; },

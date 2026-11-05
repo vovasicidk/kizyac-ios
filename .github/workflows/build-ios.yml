@@ -51,3 +51,4 @@ jobs:
           name: Kizyac-iOS-IPA
           path: build/Kizyac.ipa
           retention-days: 30
+
