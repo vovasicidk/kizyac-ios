@@ -111,22 +111,34 @@ final class NativeBridge: NSObject, WKScriptMessageHandler {
                     }
                 },
                 hasCheatAccess: function() { return true; },
-                getCheatChallenge: function() { return ""; },
-                renewCheatChallenge: function() { return ""; },
+                getCheatChallenge: function() {
+                    return "KZ-IOS-" + Date.now().toString(36).toUpperCase();
+                },
+                renewCheatChallenge: function() {
+                    return "KZ-IOS-" + Date.now().toString(36).toUpperCase();
+                },
                 cheatWaitSeconds: function() { return 0; },
                 approveCheatAction: function() { return true; },
-                copyCheatChallenge: function() {},
+                copyCheatChallenge: function() {
+                    try {
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(this.getCheatChallenge());
+                        }
+                    } catch(e){}
+                },
                 allowStateImport: function() { return true; },
                 finishBackupSetup: function() {},
                 flushBackup: function() {},
                 getBackupStatus: function() { return ""; },
                 selectBackupFolder: function() {},
-                unlockCheats: function(challenge, response) {
+                unlockCheats: function(code, requestId) {
                     setTimeout(function() {
+                        var payload = { request: requestId, ok: true, waitSeconds: 0 };
                         if (window.Kizyac && window.Kizyac.onCheatAuth) {
-                            window.Kizyac.onCheatAuth(JSON.stringify({ request: response, ok: true, waitSeconds: 0 }));
+                            try { window.Kizyac.onCheatAuth(payload); } catch(e){}
+                            try { window.Kizyac.onCheatAuth(JSON.stringify(payload)); } catch(e){}
                         }
-                    }, 50);
+                    }, 20);
                 }
             };
         })();

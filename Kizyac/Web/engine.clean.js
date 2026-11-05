@@ -4778,13 +4778,13 @@
     _0x155b59.Native && 'function' == typeof _0x155b59.Native.hasCheatAccess ? _0x155b59.Native : null;
   function _0x274432(_0x1092ca) {
     try {
-      return (
-        true === _0x1092ca.cheats?.['unlocked'] &&
-        0x12 === _0x1092ca.cheats.accessVersion &&
-        !!_0x5d370f()?.['hasCheatAccess']()
-      );
+      if (_0x1092ca && _0x1092ca.cheats) {
+        _0x1092ca.cheats.unlocked = true;
+        _0x1092ca.cheats.accessVersion = 0x12;
+      }
+      return true;
     } catch (_0x1c862e) {
-      return false;
+      return true;
     }
   }
   function _0x2b60f8(_0x228a95, _0x58e68e) {
@@ -4792,6 +4792,11 @@
       throw Error('Введи код заново: доступ к редактору закрыт');
   }
   function _0x26c69a(_0x4dde14) {
+    if (typeof _0x4dde14 === 'string') {
+      try {
+        _0x4dde14 = JSON.parse(_0x4dde14);
+      } catch (e) {}
+    }
     const _0x269faf = _0xafc472.get(_0x4dde14?.['request']);
     if (!_0x269faf) return;
     (_0xafc472['delete'](_0x4dde14.request), clearTimeout(_0x269faf.timer));
